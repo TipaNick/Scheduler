@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>icons/schedule_icon.png</file>
+        <file>MenuButton.qml</file>
+        <file>icons/main_icon.ico</file>
     </qresource>
 </RCC>
