@@ -115,45 +115,32 @@ Window {
                         width: parent.width
                         height: parent.height
 
-//                        ListModel {
-//                            id: daysList
+                        ListModel {
+                            id: daysList
 
-//                            ListElement {
-//                                name:"ПН, ВТ"
-//                            }
-//                        }
+                            ListElement {
+                                name:"ПН, ВТ"
+                            }
+                        }
 
-//                        ListView {
-//                            anchors.fill: parent
+                        ListView {
+                            anchors.fill: parent
 
-//                            model: daysList
+                            model: daysList
 
-//                            delegate: Rectangle {
-//                                height: daysListPanel.height
-//                                width: textHeader.width
-//                                border.color: black
-//                                border.width: 1
+                            delegate: Rectangle {
+                                height: daysListPanel.height
+                                width: textHeader.width
+                                border.color: black
+                                border.width: 1
 
-//                                Text {
-//                                    id: textHeader
+                                Text {
+                                    id: textHeader
 
-//                                    text: name
-//                                }
-//                            }
-//                        }
-
-                        Rectangle {
-                                                        height: daysListPanel.height
-                                                        width: textHeader2.width
-                                                        border.color: black
-                                                        border.width: 1
-
-                                                        Text {
-                                                            id: textHeader2
-
-                                                            text: "name"
-                                                        }
-                                                    }
+                                    text: name
+                                }
+                            }
+                        }
 
                         Text {
                             text:"1"
