@@ -8,16 +8,12 @@ Button {
 
     property string header: ""
     property int fontSize: 0
-    property Item anchorsParent: undefined
     property int buttonHeight: 0
 
-    height: root.buttonHeight
+    Layout.preferredHeight: root.buttonHeight
+    Layout.preferredWidth: parent.width - 20
+    Layout.margins: 10
     text: root.header
-    anchors.top: root.anchorsParent.bottom
-    anchors.left: parent.left
-    anchors.leftMargin: 10
-    anchors.right: parent.right
-    anchors.rightMargin: 10
     font.pixelSize: root.fontSize
     background: Rectangle {
         radius: 4
