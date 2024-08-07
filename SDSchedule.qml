@@ -108,7 +108,6 @@ Item {
                         Button {
                             text: "ПН"
                             Layout.preferredHeight: parent.height - 2
-                            anchors.verticalCenter: parent.verticalCenter
                             background: Rectangle {
                                 Rectangle {
                                     anchors.bottom: parent.bottom
@@ -123,7 +122,6 @@ Item {
                         Button {
                             text: "ВТ"
                             Layout.preferredHeight: parent.height - 2
-                            anchors.verticalCenter: parent.verticalCenter
                             background: Rectangle {
                                 Rectangle {
                                     anchors.bottom: parent.bottom
@@ -138,7 +136,6 @@ Item {
                         Button {
                             text: "СР"
                             Layout.preferredHeight: parent.height - 2
-                            anchors.verticalCenter: parent.verticalCenter
                             background: Rectangle {
                                 Rectangle {
                                     anchors.bottom: parent.bottom
@@ -153,7 +150,6 @@ Item {
                         Button {
                             text: "ЧТ"
                             Layout.preferredHeight: parent.height - 2
-                            anchors.verticalCenter: parent.verticalCenter
                             background: Rectangle {
                                 Rectangle {
                                     anchors.bottom: parent.bottom
@@ -167,7 +163,6 @@ Item {
                         Button {
                             text: "ПТ"
                             Layout.preferredHeight: parent.height - 2
-                            anchors.verticalCenter: parent.verticalCenter
                             background: Rectangle {
                                 Rectangle {
                                     anchors.bottom: parent.bottom
@@ -182,7 +177,6 @@ Item {
                         Button {
                             text: "СБ"
                             Layout.preferredHeight: parent.height - 2
-                            anchors.verticalCenter: parent.verticalCenter
                             background: Rectangle {
                                 Rectangle {
                                     anchors.bottom: parent.bottom
@@ -197,7 +191,6 @@ Item {
                         Button {
                             text: "ВС"
                             Layout.preferredHeight: parent.height - 2
-                            anchors.verticalCenter: parent.verticalCenter
                             background: Rectangle {
                                 Rectangle {
                                     anchors.bottom: parent.bottom
@@ -254,25 +247,21 @@ Item {
 
                  Text {
                      text: "Название активности"
-                     anchors.verticalCenter: parent.verticalCenter
                      Layout.preferredWidth: parent.width * 0.22
                  }
 
                  Text {
                      text: "Категория"
-                     anchors.verticalCenter: parent.verticalCenter
                      Layout.preferredWidth: parent.width * 0.22
                  }
 
                  Text {
                      text: "Тип"
-                     anchors.verticalCenter: parent.verticalCenter
                      Layout.preferredWidth: parent.width * 0.22
                  }
 
                  Text {
                      text: "Длительность"
-                     anchors.verticalCenter: parent.verticalCenter
                      Layout.preferredWidth: parent.width * 0.17
                  }
 
@@ -376,7 +365,6 @@ Item {
 
                          Text {
                              text: name
-                             anchors.verticalCenter: dragScheduleRect.verticalCenter
                              Layout.preferredWidth: parent.width * 0.22
                          }
 
@@ -402,7 +390,6 @@ Item {
 
                          Text {
                              text: duration
-                             anchors.verticalCenter: dragScheduleRect.verticalCenter
                              Layout.preferredWidth: parent.width * 0.17
                          }
 
@@ -414,48 +401,6 @@ Item {
                              }
                          }
                      }
-
-                     MouseArea {
-                         id: area
-
-                         anchors.fill: parent
-                         hoverEnabled: true
-                         drag.target: dragScheduleRect
-
-                         drag.onActiveChanged: {
-                             console.log("take")
-                             dropScheduleArea.enabled = !dropScheduleArea.enabled
-                             dragScheduleRect.Drag.drop()
-                             dragScheduleRect.z = 2
-                             if (dropScheduleArea.enabled) {
-                                 console.log("drop")
-                                 dragScheduleRect.z = 1
-                                 dragScheduleRect.x = 0
-                                 dragScheduleRect.y = index * dragScheduleRect.height
-                             }
-
-                         }
-                     }
-
-                     DropArea {
-                         id: dropScheduleArea
-
-                         anchors.fill: parent
-
-                         onEntered: {
-                             dragScheduleRect.border.color = "#54ff67"
-
-                         }
-
-                         onDropped: {
-                             scheduleTaskModel.move(drop.source._index, index, 1)
-                         }
-
-                     }
-
-                     Drag.active: dropScheduleArea.drag.active
-                     Drag.hotSpot.x: dragScheduleRect.width / 2
-                     Drag.hotSpot.y: dragScheduleRect.height / 2
                  }
              }
          }
@@ -464,6 +409,6 @@ Item {
 
 /*##^##
 Designer {
-    D{i:0;autoSize:true;formeditorZoom:1.75;height:480;width:640}
+    D{i:0;autoSize:true;formeditorZoom:0.66;height:720;width:1280}
 }
 ##^##*/

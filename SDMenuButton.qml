@@ -9,6 +9,7 @@ Button {
     property string header: ""
     property int fontSize: 0
     property int buttonHeight: 0
+    property string backgroundColor: "#ffffff"
 
     signal changePage
 
@@ -19,6 +20,7 @@ Button {
     font.pixelSize: root.fontSize
     background: Rectangle {
         radius: 4
+        color: root.backgroundColor
     }
 
     onChangePage: root.changePage()

@@ -1,9 +1,12 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>icons/schedule_icon.png</file>
         <file>SDMenuButton.qml</file>
         <file>icons/main_icon.ico</file>
         <file>SDSchedule.qml</file>
+        <file>SDTask.qml</file>
+        <file>SDMain.qml</file>
+        <file>SDTaskActive.qml</file>
+        <file>SDTaskCompleted.qml</file>
     </qresource>
 </RCC>

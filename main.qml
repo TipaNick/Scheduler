@@ -9,6 +9,7 @@ Window {
     property string mainColor: "#4870b7"
     property string secondaryColor: "#ffffff"
     property string borderColor: "#e0e0e0"
+    property string pickColor: "#e6f0fc"
     property int fontSize: root.width / 70
 
     width: 1366
@@ -62,6 +63,8 @@ Window {
                         header: qsTr("Главная")
                         fontSize: root.fontSize
                         buttonHeight: parent.height / 12
+                        backgroundColor: (pageView.currentIndex === 0) ? root.pickColor : "#ffffff"
+                        onClicked: pageView.currentIndex = 0
                     }
 
                     SDMenuButton {
@@ -70,7 +73,9 @@ Window {
                         header: qsTr("Расписание")
                         fontSize: root.fontSize
                         buttonHeight: parent.height / 12
-                        onClicked: loader.setSource("SDSchedule.qml")
+                        backgroundColor: (pageView.currentIndex === 1) ? root.pickColor : "#ffffff"
+                        onClicked: pageView.currentIndex = 1
+
                     }
 
                     SDMenuButton {
@@ -79,6 +84,8 @@ Window {
                         header: qsTr("Задачи")
                         fontSize: root.fontSize
                         buttonHeight: parent.height / 12
+                        backgroundColor: (pageView.currentIndex === 2) ? root.pickColor : "#ffffff"
+                        onClicked: pageView.currentIndex = 2
                     }
 
                     Item {
@@ -100,15 +107,26 @@ Window {
             height: root.height
             width: root.width * 0.8
 
-            Loader {
-                id: loader
+            SwipeView {
+                id: pageView
 
+                currentIndex: 2
                 anchors.fill: parent
+                orientation: Qt.Vertical
+                interactive: false
 
-                source: ""
+                SDMain {
+
+                }
+
+                SDSchedule {
+
+                }
+
+                SDTask {
+
+                }
             }
-
-
         }
     }
 }
